@@ -220,18 +220,13 @@ $(function() {
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/howto/static-files/</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a7b1134a360cd269d783d6d115a109a2e">  174</a></span>&#160;STATIC_URL = <span class="stringliteral">&#39;static/&#39;</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a2eca0d029f3c8931b2cd497ceb0b99a0">  175</a></span>&#160;STATICFILES_DIRS = [</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    os.path.join(BASE_DIR, <span class="stringliteral">&#39;static&#39;</span>),</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    os.path.join(BASE_DIR, <span class="stringliteral">&#39;templates&#39;</span>),</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;]</div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a42a712df97de8ab3dc9d926ca2e21430">  179</a></span>&#160;STATIC_ROOT = os.path.join(BASE_DIR, <span class="stringliteral">&#39;_static&#39;</span>)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"># Default primary key field type</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#ab05b58429742ac6cf30eb684d4a27e79">  179</a></span>&#160;DEFAULT_AUTO_FIELD = <span class="stringliteral">&#39;django.db.models.BigAutoField&#39;</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"># Default primary key field type</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#ab05b58429742ac6cf30eb684d4a27e79">  184</a></span>&#160;DEFAULT_AUTO_FIELD = <span class="stringliteral">&#39;django.db.models.BigAutoField&#39;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aab1f9578d51f3baabf6bbcc2f8f632ec">  186</a></span>&#160;DJANGO_CRYPTOGRAPHY_KEY = os.environ.get(<span class="stringliteral">&quot;WEB_CRYPTOGRAPHY_KEY&quot;</span>)</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aab1f9578d51f3baabf6bbcc2f8f632ec">  181</a></span>&#160;DJANGO_CRYPTOGRAPHY_KEY = os.environ.get(<span class="stringliteral">&quot;WEB_CRYPTOGRAPHY_KEY&quot;</span>)</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
