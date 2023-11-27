@@ -46,17 +46,17 @@ $(function() {
 <div class="title">models.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="authapp_2models_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacesrc_1_1authapp_1_1models.html">    1</a></span>&#160;<span class="keyword">from</span> django.db <span class="keyword">import</span> models</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div>
+<a href="authapp_2models_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceskkumail_1_1src_1_1authapp_1_1models.html">    1</a></span>&#160;<span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> django.db <span class="keyword">import</span> models</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> django_cryptography.fields <span class="keyword">import</span> encrypt</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classsrc_1_1authapp_1_1models_1_1_user_profile.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsrc_1_1authapp_1_1models_1_1_user_profile.html">UserProfile</a>(models.Model):</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classsrc_1_1authapp_1_1models_1_1_user_profile.html#a9e050acc02306dc8a6fac00f8cd63a1d">    7</a></span>&#160;    user = models.OneToOneField(User, on_delete=models.CASCADE)</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classsrc_1_1authapp_1_1models_1_1_user_profile.html#a76aa0405e29fae5b448b3aab1cac8321">    8</a></span>&#160;    encrypted_smtp_password = encrypt(models.CharField(max_length=100))</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html">UserProfile</a>(models.Model):</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html#a9afbff85d53cc62284c16a2504778a2e">    7</a></span>&#160;    user = models.OneToOneField(User, on_delete=models.CASCADE)</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html#a2208145c6ef6f5121cda033f6d550e0e">    8</a></span>&#160;    encrypted_smtp_password = encrypt(models.CharField(max_length=100))</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classsrc_1_1authapp_1_1models_1_1_user_profile.html#a6c12cb490d9a98ed895620842d843240">   10</a></span>&#160;    objects = models.Manager()</div>
-<div class="ttc" id="aclasssrc_1_1authapp_1_1models_1_1_user_profile_html"><div class="ttname"><a href="classsrc_1_1authapp_1_1models_1_1_user_profile.html">src.authapp.models.UserProfile</a></div><div class="ttdef"><b>Definition:</b> <a href="authapp_2models_8py_source.html#l00006">models.py:6</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html#a7e8d46a70ec5a4173d22aeef74f5f583">   10</a></span>&#160;    objects = models.Manager()</div>
+<div class="ttc" id="aclassskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile_html"><div class="ttname"><a href="classskkumail_1_1src_1_1authapp_1_1models_1_1_user_profile.html">skkumail.src.authapp.models.UserProfile</a></div><div class="ttdef"><b>Definition:</b> <a href="authapp_2models_8py_source.html#l00006">models.py:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
