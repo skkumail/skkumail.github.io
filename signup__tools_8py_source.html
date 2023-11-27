@@ -48,20 +48,19 @@ $(function() {
 <div class="contents">
 <a href="signup__tools_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html">    1</a></span>&#160;<span class="keyword">import</span> smtplib</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> utils.smtp_crypto <span class="keyword">import</span> decrypt_smtp_password</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">    5</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">verify_smtp_credentials</a>(email, smtp_password):</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">with</span> smtplib.SMTP(<span class="stringliteral">&#39;smtp.gmail.com&#39;</span>, 587) <span class="keyword">as</span> server:  <span class="comment"># Replace with your SMTP server</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            server.starttls()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            server.login(email, smtp_password)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">True</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">except</span> smtplib.SMTPAuthenticationError:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">except</span> smtplib.SMTPException <span class="keyword">as</span> e:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        print(f<span class="stringliteral">&quot;An SMTP error occurred: {e}&quot;</span>)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="ttc" id="anamespaceskkumail_1_1src_1_1authapp_1_1signup__tools_html_ac19503fc420f9fb539d91b77721befb2"><div class="ttname"><a href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">skkumail.src.authapp.signup_tools.verify_smtp_credentials</a></div><div class="ttdeci">def verify_smtp_credentials(email, smtp_password)</div><div class="ttdef"><b>Definition:</b> <a href="signup__tools_8py_source.html#l00005">signup_tools.py:5</a></div></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">    4</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">verify_smtp_credentials</a>(email, smtp_password):</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keyword">with</span> smtplib.SMTP(<span class="stringliteral">&#39;smtp.gmail.com&#39;</span>, 587) <span class="keyword">as</span> server:  <span class="comment"># Replace with your SMTP server</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;            server.starttls()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            server.login(email, smtp_password)</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">except</span> smtplib.SMTPAuthenticationError:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">except</span> smtplib.SMTPException <span class="keyword">as</span> e:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        print(f<span class="stringliteral">&quot;An SMTP error occurred: {e}&quot;</span>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="ttc" id="anamespaceskkumail_1_1src_1_1authapp_1_1signup__tools_html_ac19503fc420f9fb539d91b77721befb2"><div class="ttname"><a href="namespaceskkumail_1_1src_1_1authapp_1_1signup__tools.html#ac19503fc420f9fb539d91b77721befb2">skkumail.src.authapp.signup_tools.verify_smtp_credentials</a></div><div class="ttdeci">def verify_smtp_credentials(email, smtp_password)</div><div class="ttdef"><b>Definition:</b> <a href="signup__tools_8py_source.html#l00004">signup_tools.py:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
