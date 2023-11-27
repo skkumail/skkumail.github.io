@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,46,93,73"/>
-<area shape="rect" id="node2" href="$classskkumail_1_1src_1_1authapp_1_1apps_1_1_authapp_config.html" title=" " alt="" coords="147,5,347,47"/>
-<area shape="rect" id="node3" href="$classskkumail_1_1src_1_1wmailapp_1_1apps_1_1_wmailapp_config.html" title=" " alt="" coords="141,71,352,112"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,93,105"/>
+<area shape="rect" id="node2" href="$classmailai_1_1src_1_1authapp_1_1apps_1_1_authapp_config.html" title=" " alt="" coords="157,5,339,47"/>
+<area shape="rect" id="node3" href="$classmailai_1_1src_1_1comm_1_1apps_1_1_comm_config.html" title=" " alt="" coords="141,71,355,112"/>
+<area shape="rect" id="node4" href="$classmailai_1_1src_1_1wmailapp_1_1apps_1_1_wmailapp_config.html" title=" " alt="" coords="151,136,345,177"/>
 </map>
