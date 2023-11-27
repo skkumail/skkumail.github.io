@@ -42,10 +42,293 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">mailai.src.comm.mailai_gpt Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa73e4f6f9d671ab12848ef15ecd37224"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#aa73e4f6f9d671ab12848ef15ecd37224">get_mail_content_generator_prompt</a> (str name, str relation, str style, str text)</td></tr>
+<tr class="separator:aa73e4f6f9d671ab12848ef15ecd37224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad162a2d73b617fd3f0b7159b77c250a9"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#ad162a2d73b617fd3f0b7159b77c250a9">get_mail_title_generator_prompt</a> (str content)</td></tr>
+<tr class="separator:ad162a2d73b617fd3f0b7159b77c250a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee8240625c274792f9b2e57334caa6f"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a5ee8240625c274792f9b2e57334caa6f">generate_mail_title</a> (str content)</td></tr>
+<tr class="separator:a5ee8240625c274792f9b2e57334caa6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad218ef9d1006519365e21d0c37db4543"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#ad218ef9d1006519365e21d0c37db4543">generate_mail_content</a> (name, relation, style, text)</td></tr>
+<tr class="separator:ad218ef9d1006519365e21d0c37db4543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a87abe14854bb6b12f50db046641a5021"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a87abe14854bb6b12f50db046641a5021">openai_api_key</a> = settings.OPENAI_API_KEY</td></tr>
+<tr class="separator:a87abe14854bb6b12f50db046641a5021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b207f3f27e5716c60fef18dc519523c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a9b207f3f27e5716c60fef18dc519523c">openai_model</a> = settings.OPENAI_MODEL</td></tr>
+<tr class="separator:a9b207f3f27e5716c60fef18dc519523c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b0dc04dcc9e6db88f21eddb6d04607"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a95b0dc04dcc9e6db88f21eddb6d04607">headers</a></td></tr>
+<tr class="separator:a95b0dc04dcc9e6db88f21eddb6d04607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2548e528969f825f923e97fe201b2d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a3f2548e528969f825f923e97fe201b2d">url</a> = &quot;https://api.openai.com/v1/chat/completions&quot;</td></tr>
+<tr class="separator:a3f2548e528969f825f923e97fe201b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddd9d0e7f08cf67da2dd5f4faa42a57"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a4ddd9d0e7f08cf67da2dd5f4faa42a57">system_role_content</a></td></tr>
+<tr class="separator:a4ddd9d0e7f08cf67da2dd5f4faa42a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a1b942cc4554644ec9f507a254b5cc3"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemailai_1_1src_1_1comm_1_1mailai__gpt.html#a4a1b942cc4554644ec9f507a254b5cc3">system_role_title</a></td></tr>
+<tr class="separator:a4a1b942cc4554644ec9f507a254b5cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad218ef9d1006519365e21d0c37db4543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad218ef9d1006519365e21d0c37db4543">&#9670;&nbsp;</a></span>generate_mail_content()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def mailai.src.comm.mailai_gpt.generate_mail_content </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>relation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>style</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00057">57</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+<p class="reference">References <a class="el" href="mailai__gpt_8py_source.html#l00030">mailai.src.comm.mailai_gpt.get_mail_content_generator_prompt()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="wmailapp_2views_8py_source.html#l00013">mailai.src.wmailapp.views.mail_process_view()</a>.</p>
+
+</div>
+</div>
+<a id="a5ee8240625c274792f9b2e57334caa6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee8240625c274792f9b2e57334caa6f">&#9670;&nbsp;</a></span>generate_mail_title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">str mailai.src.comm.mailai_gpt.generate_mail_title </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00040">40</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+<p class="reference">References <a class="el" href="mailai__gpt_8py_source.html#l00037">mailai.src.comm.mailai_gpt.get_mail_title_generator_prompt()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="wmailapp_2views_8py_source.html#l00013">mailai.src.wmailapp.views.mail_process_view()</a>.</p>
+
+</div>
+</div>
+<a id="aa73e4f6f9d671ab12848ef15ecd37224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73e4f6f9d671ab12848ef15ecd37224">&#9670;&nbsp;</a></span>get_mail_content_generator_prompt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str mailai.src.comm.mailai_gpt.get_mail_content_generator_prompt </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>relation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>style</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00030">30</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mailai__gpt_8py_source.html#l00057">mailai.src.comm.mailai_gpt.generate_mail_content()</a>.</p>
+
+</div>
+</div>
+<a id="ad162a2d73b617fd3f0b7159b77c250a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad162a2d73b617fd3f0b7159b77c250a9">&#9670;&nbsp;</a></span>get_mail_title_generator_prompt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str mailai.src.comm.mailai_gpt.get_mail_title_generator_prompt </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>content</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00037">37</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mailai__gpt_8py_source.html#l00040">mailai.src.comm.mailai_gpt.generate_mail_title()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a95b0dc04dcc9e6db88f21eddb6d04607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b0dc04dcc9e6db88f21eddb6d04607">&#9670;&nbsp;</a></span>headers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary mailai.src.comm.mailai_gpt.headers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;Content-Type&quot;</span>: <span class="stringliteral">&quot;application/json&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;Authorization&quot;</span>: f<span class="stringliteral">&quot;Bearer {openai_api_key}&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00007">7</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
+<a id="a87abe14854bb6b12f50db046641a5021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87abe14854bb6b12f50db046641a5021">&#9670;&nbsp;</a></span>openai_api_key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mailai.src.comm.mailai_gpt.openai_api_key = settings.OPENAI_API_KEY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00005">5</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
+<a id="a9b207f3f27e5716c60fef18dc519523c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b207f3f27e5716c60fef18dc519523c">&#9670;&nbsp;</a></span>openai_model</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mailai.src.comm.mailai_gpt.openai_model = settings.OPENAI_MODEL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00006">6</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
+<a id="a4ddd9d0e7f08cf67da2dd5f4faa42a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddd9d0e7f08cf67da2dd5f4faa42a57">&#9670;&nbsp;</a></span>system_role_content</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary mailai.src.comm.mailai_gpt.system_role_content</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;role&quot;</span>: <span class="stringliteral">&quot;system&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;content&quot;</span>: <span class="stringliteral">&quot;You are an expert in crafting professional business emails. Your task is to compose emails that are &quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;               <span class="stringliteral">&quot;clear, concise, and appropriate for a business setting. Focus solely on the email body, ensuring it &quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;               <span class="stringliteral">&quot;directly addresses the given points. Avoid any superfluous language, summaries, greetings, &quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;               <span class="stringliteral">&quot;or sign-offs. you must make it plane text with new proper new lines and indents format so that it can &quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;               <span class="stringliteral">&quot;handled with mail server. You must add Dear .. and at the end Best Regards, ..&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00012">12</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
+<a id="a4a1b942cc4554644ec9f507a254b5cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1b942cc4554644ec9f507a254b5cc3">&#9670;&nbsp;</a></span>system_role_title</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dictionary mailai.src.comm.mailai_gpt.system_role_title</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="stringliteral">&quot;role&quot;</span>: <span class="stringliteral">&quot;system&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="stringliteral">&quot;content&quot;</span>: <span class="stringliteral">&quot;You are an expert in crafting professional business emails. Your task is to cdy, ensuring it directly &quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;               <span class="stringliteral">&quot;addresses the given points. Avoid any superfluous language, summaries, greetings, or sign-offs. &quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;               <span class="stringliteral">&quot;emails that are clear, concise, and appropriate for a business setting. Focus solely on the email &quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;               <span class="stringliteral">&quot;subject that will be used in smtp email message.&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00021">21</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
+<a id="a3f2548e528969f825f923e97fe201b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2548e528969f825f923e97fe201b2d">&#9670;&nbsp;</a></span>url</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string mailai.src.comm.mailai_gpt.url = &quot;https://api.openai.com/v1/chat/completions&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__gpt_8py_source.html#l00011">11</a> of file <a class="el" href="mailai__gpt_8py_source.html">mailai_gpt.py</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
