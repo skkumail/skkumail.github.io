@@ -55,7 +55,7 @@ Variables</h2></td></tr>
 <tr class="separator:a58480fe5b0759d215677aa6737340b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#aab1f9578d51f3baabf6bbcc2f8f632ec">DJANGO_CRYPTOGRAPHY_KEY</a> = str(os.environ.get(&quot;WEB_CRYPTOGRAPHY_KEY&quot;)).strip()</td></tr>
 <tr class="separator:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a10e8d3846d61cbfbad1b92f9e4974c59">SECRET_KEY</a> = str(os.environ.get('WEB_SECRET_KEY', 'default_secret_key')).strip()</td></tr>
+<tr class="memitem:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a10e8d3846d61cbfbad1b92f9e4974c59">SECRET_KEY</a> = str(os.environ.get(&quot;WEB_SECRET_KEY&quot;, 'default_secret_key')).strip()</td></tr>
 <tr class="separator:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c49b5c76bea6fc36000eea4f22fb1b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a1c49b5c76bea6fc36000eea4f22fb1b0">PUBLIC_HOST</a> = str(os.environ.get(&quot;LETSENCRYPT_HOST&quot;, 'localhost')).strip()</td></tr>
 <tr class="separator:a1c49b5c76bea6fc36000eea4f22fb1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -63,7 +63,7 @@ Variables</h2></td></tr>
 <tr class="separator:a6858ab56824b634f04c450cac31950af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a625f61fcad472dc3404ee9e55bad0615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a625f61fcad472dc3404ee9e55bad0615">OPENAI_MODEL</a> = str(os.environ.get(&quot;WEB_OPENAI_MODEL&quot;, 'default_model')).strip()</td></tr>
 <tr class="separator:a625f61fcad472dc3404ee9e55bad0615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7763038c0f522d8770781e51edabce9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#ae7763038c0f522d8770781e51edabce9">DEBUG</a> = bool(str(os.environ.get('WEB_DEBUG', 'False')).strip())</td></tr>
+<tr class="memitem:ae7763038c0f522d8770781e51edabce9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#ae7763038c0f522d8770781e51edabce9">DEBUG</a> = bool(int(str(os.environ.get(&quot;WEB_DEBUG&quot;, 'False')).strip()))</td></tr>
 <tr class="separator:ae7763038c0f522d8770781e51edabce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f6f730bae23c4b8e72b95ac0554d7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a93f6f730bae23c4b8e72b95ac0554d7e">KeyBERT</a></td></tr>
 <tr class="separator:a93f6f730bae23c4b8e72b95ac0554d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,7 +341,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.DEBUG = bool(str(os.environ.get('WEB_DEBUG', 'False')).strip())</td>
+          <td class="memname">src.mailai.settings.DEBUG = bool(int(str(os.environ.get(&quot;WEB_DEBUG&quot;, 'False')).strip()))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -540,7 +540,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.SECRET_KEY = str(os.environ.get('WEB_SECRET_KEY', 'default_secret_key')).strip()</td>
+          <td class="memname">src.mailai.settings.SECRET_KEY = str(os.environ.get(&quot;WEB_SECRET_KEY&quot;, 'default_secret_key')).strip()</td>
         </tr>
       </table>
 </div><div class="memdoc">
