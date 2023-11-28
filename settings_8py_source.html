@@ -186,55 +186,56 @@ $(function() {
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="stringliteral">&#39;PORT&#39;</span>: os.environ.get(<span class="stringliteral">&#39;DB_PORT&#39;</span>),</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="stringliteral">&#39;OPTIONS&#39;</span>: {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="stringliteral">&#39;init_command&#39;</span>: <span class="stringliteral">&quot;SET sql_mode=&#39;STRICT_TRANS_TABLES&#39;, innodb_strict_mode=1&quot;</span>,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            },</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment"># Fall back to SQLite if not in production</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    DATABASES = {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="stringliteral">&#39;default&#39;</span>: {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="stringliteral">&#39;ENGINE&#39;</span>: <span class="stringliteral">&#39;django.db.backends.sqlite3&#39;</span>,</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="stringliteral">&#39;NAME&#39;</span>: BASE_DIR / <span class="stringliteral">&#39;db.sqlite3&#39;</span>,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"># Password validation</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a74ae2d9c808099aaee90ea60d87f30f4">  155</a></span>&#160;AUTH_PASSWORD_VALIDATORS = [</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;</span>,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    },</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;</span>,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    },</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;</span>,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    },</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;</span>,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    },</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;]</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment"># Internationalization</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/topics/i18n/</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aa766d735af88676b42e315bb523eb8db">  173</a></span>&#160;LANGUAGE_CODE = <span class="stringliteral">&#39;en-us&#39;</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a3b34e59c8c1f0d5f09cde52792484b8e">  175</a></span>&#160;TIME_ZONE = <span class="stringliteral">&#39;UTC&#39;</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aa8b0b74168a5adada8780e453994fc21">  177</a></span>&#160;USE_I18N = <span class="keyword">True</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a3bd0966bb3ae784c0cf73f65397af954">  179</a></span>&#160;USE_TZ = <span class="keyword">True</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"># Static files (CSS, JavaScript, Images)</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/howto/static-files/</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a7b1134a360cd269d783d6d115a109a2e">  184</a></span>&#160;STATIC_URL = <span class="stringliteral">&#39;static/&#39;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"># Default primary key field type</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#ab05b58429742ac6cf30eb684d4a27e79">  189</a></span>&#160;DEFAULT_AUTO_FIELD = <span class="stringliteral">&#39;django.db.models.BigAutoField&#39;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="stringliteral">&#39;charset&#39;</span>: <span class="stringliteral">&#39;utf8mb4&#39;</span>,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            },</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment"># Fall back to SQLite if not in production</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    DATABASES = {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="stringliteral">&#39;default&#39;</span>: {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="stringliteral">&#39;ENGINE&#39;</span>: <span class="stringliteral">&#39;django.db.backends.sqlite3&#39;</span>,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="stringliteral">&#39;NAME&#39;</span>: BASE_DIR / <span class="stringliteral">&#39;db.sqlite3&#39;</span>,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"># Password validation</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a74ae2d9c808099aaee90ea60d87f30f4">  156</a></span>&#160;AUTH_PASSWORD_VALIDATORS = [</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;</span>,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    },</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;</span>,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    },</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;</span>,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    },</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="stringliteral">&#39;NAME&#39;</span>: <span class="stringliteral">&#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;</span>,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    },</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;]</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"># Internationalization</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/topics/i18n/</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aa766d735af88676b42e315bb523eb8db">  174</a></span>&#160;LANGUAGE_CODE = <span class="stringliteral">&#39;en-us&#39;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a3b34e59c8c1f0d5f09cde52792484b8e">  176</a></span>&#160;TIME_ZONE = <span class="stringliteral">&#39;UTC&#39;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#aa8b0b74168a5adada8780e453994fc21">  178</a></span>&#160;USE_I18N = <span class="keyword">True</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a3bd0966bb3ae784c0cf73f65397af954">  180</a></span>&#160;USE_TZ = <span class="keyword">True</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment"># Static files (CSS, JavaScript, Images)</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/howto/static-files/</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#a7b1134a360cd269d783d6d115a109a2e">  185</a></span>&#160;STATIC_URL = <span class="stringliteral">&#39;static/&#39;</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"># Default primary key field type</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"># https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="namespacesrc_1_1mailai_1_1settings.html#ab05b58429742ac6cf30eb684d4a27e79">  190</a></span>&#160;DEFAULT_AUTO_FIELD = <span class="stringliteral">&#39;django.db.models.BigAutoField&#39;</span></div>
 <div class="ttc" id="anamespacesrc_1_1mailai_1_1settings_html_a93f6f730bae23c4b8e72b95ac0554d7e"><div class="ttname"><a href="namespacesrc_1_1mailai_1_1settings.html#a93f6f730bae23c4b8e72b95ac0554d7e">src.mailai.settings.KeyBERT</a></div><div class="ttdeci">KeyBERT</div><div class="ttdef"><b>Definition:</b> <a href="settings_8py_source.html#l00031">settings.py:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
