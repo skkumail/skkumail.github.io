@@ -53,12 +53,20 @@ $(function() {
 Variables</h2></td></tr>
 <tr class="memitem:a58480fe5b0759d215677aa6737340b78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a58480fe5b0759d215677aa6737340b78">BASE_DIR</a> = Path(__file__).resolve().parent.parent</td></tr>
 <tr class="separator:a58480fe5b0759d215677aa6737340b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a10e8d3846d61cbfbad1b92f9e4974c59">SECRET_KEY</a> = str(os.environ.get('WEB_SECRET_KEY'))</td></tr>
+<tr class="memitem:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#aab1f9578d51f3baabf6bbcc2f8f632ec">DJANGO_CRYPTOGRAPHY_KEY</a> = str(os.environ.get(&quot;WEB_CRYPTOGRAPHY_KEY&quot;)).strip()</td></tr>
+<tr class="separator:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a10e8d3846d61cbfbad1b92f9e4974c59">SECRET_KEY</a> = str(os.environ.get('WEB_SECRET_KEY', 'default_secret_key')).strip()</td></tr>
 <tr class="separator:a10e8d3846d61cbfbad1b92f9e4974c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c49b5c76bea6fc36000eea4f22fb1b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a1c49b5c76bea6fc36000eea4f22fb1b0">PUBLIC_HOST</a> = os.environ.get(&quot;LETSENCRYPT_HOST&quot;, 'localhost')</td></tr>
+<tr class="memitem:a1c49b5c76bea6fc36000eea4f22fb1b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a1c49b5c76bea6fc36000eea4f22fb1b0">PUBLIC_HOST</a> = str(os.environ.get(&quot;LETSENCRYPT_HOST&quot;, 'localhost')).strip()</td></tr>
 <tr class="separator:a1c49b5c76bea6fc36000eea4f22fb1b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7763038c0f522d8770781e51edabce9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#ae7763038c0f522d8770781e51edabce9">DEBUG</a> = os.environ.get('WEB_DEBUG')</td></tr>
+<tr class="memitem:a6858ab56824b634f04c450cac31950af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a6858ab56824b634f04c450cac31950af">OPENAI_API_KEY</a> = str(os.environ.get(&quot;WEB_OPENAI_API_KEY&quot;, 'default_openai_key')).strip()</td></tr>
+<tr class="separator:a6858ab56824b634f04c450cac31950af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625f61fcad472dc3404ee9e55bad0615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a625f61fcad472dc3404ee9e55bad0615">OPENAI_MODEL</a> = str(os.environ.get(&quot;WEB_OPENAI_MODEL&quot;, 'default_model')).strip()</td></tr>
+<tr class="separator:a625f61fcad472dc3404ee9e55bad0615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7763038c0f522d8770781e51edabce9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#ae7763038c0f522d8770781e51edabce9">DEBUG</a> = bool(str(os.environ.get('WEB_DEBUG', 'False')).strip())</td></tr>
 <tr class="separator:ae7763038c0f522d8770781e51edabce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f6f730bae23c4b8e72b95ac0554d7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a93f6f730bae23c4b8e72b95ac0554d7e">KeyBERT</a></td></tr>
+<tr class="separator:a93f6f730bae23c4b8e72b95ac0554d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7854879a35dc9b3e38205054e51389cd"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a7854879a35dc9b3e38205054e51389cd">ALLOWED_HOSTS</a> = ['localhost', '127.0.0.1', <a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a1c49b5c76bea6fc36000eea4f22fb1b0">PUBLIC_HOST</a>]</td></tr>
 <tr class="separator:a7854879a35dc9b3e38205054e51389cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39ed0a649e0d019a9a40da9b5e578ff3"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#a39ed0a649e0d019a9a40da9b5e578ff3">INSTALLED_APPS</a></td></tr>
@@ -99,11 +107,9 @@ Variables</h2></td></tr>
 <tr class="separator:a7b1134a360cd269d783d6d115a109a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab05b58429742ac6cf30eb684d4a27e79"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#ab05b58429742ac6cf30eb684d4a27e79">DEFAULT_AUTO_FIELD</a> = 'django.db.models.BigAutoField'</td></tr>
 <tr class="separator:ab05b58429742ac6cf30eb684d4a27e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1mailai_1_1settings.html#aab1f9578d51f3baabf6bbcc2f8f632ec">DJANGO_CRYPTOGRAPHY_KEY</a> = os.environ.get(&quot;WEB_CRYPTOGRAPHY_KEY&quot;)</td></tr>
-<tr class="separator:aab1f9578d51f3baabf6bbcc2f8f632ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Django settings for mailai project.
+<div class="textblock"><pre class="fragment">Django's settings for mailai project.
 
 Generated by 'django-admin startproject' using Django 4.2.7.
 
@@ -125,7 +131,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00031">31</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00041">41</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -155,7 +161,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    },</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;]</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00145">145</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00155">155</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -187,7 +193,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00062">62</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00074">74</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -223,7 +229,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="stringliteral">&#39;x-requested-with&#39;</span>,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00076">76</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00086">86</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -239,7 +245,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00060">60</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00072">72</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -259,7 +265,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    f<span class="stringliteral">&#39;http://{PUBLIC_HOST}&#39;</span>,</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00071">71</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00081">81</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -275,7 +281,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00058">58</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00070">70</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -295,7 +301,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    f<span class="stringliteral">&#39;http://{PUBLIC_HOST}&#39;</span>,</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;)</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00064">64</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00076">76</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -324,7 +330,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00121">121</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00131">131</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -335,7 +341,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.DEBUG = os.environ.get('WEB_DEBUG')</td>
+          <td class="memname">src.mailai.settings.DEBUG = bool(str(os.environ.get('WEB_DEBUG', 'False')).strip())</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -356,7 +362,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00179">179</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00189">189</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -367,12 +373,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.DJANGO_CRYPTOGRAPHY_KEY = os.environ.get(&quot;WEB_CRYPTOGRAPHY_KEY&quot;)</td>
+          <td class="memname">src.mailai.settings.DJANGO_CRYPTOGRAPHY_KEY = str(os.environ.get(&quot;WEB_CRYPTOGRAPHY_KEY&quot;)).strip()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00181">181</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00023">23</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -398,9 +404,27 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&#39;authapp&#39;</span>,</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="stringliteral">&#39;django_cryptography&#39;</span>,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="stringliteral">&#39;wmailapp&#39;</span>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;]</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&#39;comm&#39;</span>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="stringliteral">&#39;rmailapp&#39;</span>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;]</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00035">35</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00045">45</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+
+</div>
+</div>
+<a id="a93f6f730bae23c4b8e72b95ac0554d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f6f730bae23c4b8e72b95ac0554d7e">&#9670;&nbsp;</a></span>KeyBERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.mailai.settings.KeyBERT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00031">31</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -416,7 +440,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00163">163</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00173">173</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -441,7 +465,39 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="stringliteral">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span>,</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;]</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00048">48</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00060">60</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+
+</div>
+</div>
+<a id="a6858ab56824b634f04c450cac31950af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6858ab56824b634f04c450cac31950af">&#9670;&nbsp;</a></span>OPENAI_API_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.mailai.settings.OPENAI_API_KEY = str(os.environ.get(&quot;WEB_OPENAI_API_KEY&quot;, 'default_openai_key')).strip()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00026">26</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+
+</div>
+</div>
+<a id="a625f61fcad472dc3404ee9e55bad0615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625f61fcad472dc3404ee9e55bad0615">&#9670;&nbsp;</a></span>OPENAI_MODEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">src.mailai.settings.OPENAI_MODEL = str(os.environ.get(&quot;WEB_OPENAI_MODEL&quot;, 'default_model')).strip()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00027">27</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -452,7 +508,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.PUBLIC_HOST = os.environ.get(&quot;LETSENCRYPT_HOST&quot;, 'localhost')</td>
+          <td class="memname">src.mailai.settings.PUBLIC_HOST = str(os.environ.get(&quot;LETSENCRYPT_HOST&quot;, 'localhost')).strip()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -473,7 +529,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00097">97</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00107">107</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -484,7 +540,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">src.mailai.settings.SECRET_KEY = str(os.environ.get('WEB_SECRET_KEY'))</td>
+          <td class="memname">src.mailai.settings.SECRET_KEY = str(os.environ.get('WEB_SECRET_KEY', 'default_secret_key')).strip()</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -505,7 +561,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00174">174</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00184">184</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -536,7 +592,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    },</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;]</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00099">99</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00109">109</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -552,7 +608,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00165">165</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00175">175</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -568,7 +624,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00167">167</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00177">177</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -584,7 +640,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00169">169</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00179">179</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>
@@ -600,7 +656,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00115">115</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settings_8py_source.html#l00125">125</a> of file <a class="el" href="settings_8py_source.html">settings.py</a>.</p>
 
 </div>
 </div>

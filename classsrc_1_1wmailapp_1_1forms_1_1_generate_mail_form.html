@@ -70,13 +70,13 @@ Collaboration diagram for src.wmailapp.forms.GenerateMailForm:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:aa32c0a2813dc0158679dc442a4980e8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#aa32c0a2813dc0158679dc442a4980e8a">name</a> = forms.CharField(max_length=100)</td></tr>
+<tr class="memitem:aa32c0a2813dc0158679dc442a4980e8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#aa32c0a2813dc0158679dc442a4980e8a">name</a> = forms.CharField(max_length=100, help_text='Enter the recipient\'s name. (e.g. Yosep Kim)')</td></tr>
 <tr class="separator:aa32c0a2813dc0158679dc442a4980e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a836a7ec424727219f05f39b93384dc3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a836a7ec424727219f05f39b93384dc3a">relation</a> = forms.CharField(max_length=100)</td></tr>
+<tr class="memitem:a836a7ec424727219f05f39b93384dc3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a836a7ec424727219f05f39b93384dc3a">relation</a> = forms.CharField(max_length=100, help_text='Describe your relationship with the recipient. (e.g. CEO)')</td></tr>
 <tr class="separator:a836a7ec424727219f05f39b93384dc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ffef6fe7698b46c757813eb7d7693f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a8ffef6fe7698b46c757813eb7d7693f1">style</a> = forms.CharField(max_length=100)</td></tr>
+<tr class="memitem:a8ffef6fe7698b46c757813eb7d7693f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a8ffef6fe7698b46c757813eb7d7693f1">style</a> = forms.CharField(max_length=100, help_text='Choose the tone of the email. (e.g. formal)')</td></tr>
 <tr class="separator:a8ffef6fe7698b46c757813eb7d7693f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8909044d772c4f1ce6496bfd2c6e4314"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a8909044d772c4f1ce6496bfd2c6e4314">text</a> = forms.CharField(widget=forms.Textarea)</td></tr>
+<tr class="memitem:a8909044d772c4f1ce6496bfd2c6e4314"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1wmailapp_1_1forms_1_1_generate_mail_form.html#a8909044d772c4f1ce6496bfd2c6e4314">text</a> = forms.CharField(widget=forms.Textarea, help_text='Enter the main content of the mail. (e.g. Give me money.)')</td></tr>
 <tr class="separator:a8909044d772c4f1ce6496bfd2c6e4314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -93,7 +93,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">src.wmailapp.forms.GenerateMailForm.name = forms.CharField(max_length=100)</td>
+          <td class="memname">src.wmailapp.forms.GenerateMailForm.name = forms.CharField(max_length=100, help_text='Enter the recipient\'s name. (e.g. Yosep Kim)')</td>
         </tr>
       </table>
   </td>
@@ -117,7 +117,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">src.wmailapp.forms.GenerateMailForm.relation = forms.CharField(max_length=100)</td>
+          <td class="memname">src.wmailapp.forms.GenerateMailForm.relation = forms.CharField(max_length=100, help_text='Describe your relationship with the recipient. (e.g. CEO)')</td>
         </tr>
       </table>
   </td>
@@ -141,7 +141,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">src.wmailapp.forms.GenerateMailForm.style = forms.CharField(max_length=100)</td>
+          <td class="memname">src.wmailapp.forms.GenerateMailForm.style = forms.CharField(max_length=100, help_text='Choose the tone of the email. (e.g. formal)')</td>
         </tr>
       </table>
   </td>
@@ -165,7 +165,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">src.wmailapp.forms.GenerateMailForm.text = forms.CharField(widget=forms.Textarea)</td>
+          <td class="memname">src.wmailapp.forms.GenerateMailForm.text = forms.CharField(widget=forms.Textarea, help_text='Enter the main content of the mail. (e.g. Give me money.)')</td>
         </tr>
       </table>
   </td>
