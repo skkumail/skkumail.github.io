@@ -51,6 +51,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a68fd04d38b95ab3ef7cdc4a1b6fec564"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">truncate_for_bert</a> (text, max_length=512)</td></tr>
+<tr class="separator:a68fd04d38b95ab3ef7cdc4a1b6fec564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a740aadafcd304f24d9a83a110f4fac"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">extract_n_keywords</a> (str text, int num_keywords)</td></tr>
 <tr class="separator:a9a740aadafcd304f24d9a83a110f4fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf26374bf613f91c5102884925bd2285"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">extract_keywords</a> (str text)</td></tr>
@@ -75,9 +77,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00014">14</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00032">32</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
 
-<p class="reference">References <a class="el" href="mailai__bert_8py_source.html#l00005">src.comm.mailai_bert.extract_n_keywords()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__bert_8py_source.html#l00022">src.comm.mailai_bert.extract_n_keywords()</a>, and <a class="el" href="mailai__bert_8py_source.html#l00005">src.comm.mailai_bert.truncate_for_bert()</a>.</p>
 
 </div>
 </div>
@@ -107,9 +109,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00005">5</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00022">22</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mailai__bert_8py_source.html#l00014">src.comm.mailai_bert.extract_keywords()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__bert_8py_source.html#l00005">src.comm.mailai_bert.truncate_for_bert()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mailai__bert_8py_source.html#l00032">src.comm.mailai_bert.extract_keywords()</a>.</p>
 
 </div>
 </div>
@@ -129,7 +133,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00052">52</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00072">72</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
+
+</div>
+</div>
+<a id="a68fd04d38b95ab3ef7cdc4a1b6fec564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68fd04d38b95ab3ef7cdc4a1b6fec564">&#9670;&nbsp;</a></span>truncate_for_bert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def src.comm.mailai_bert.truncate_for_bert </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>max_length</em> = <code>512</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mailai__bert_8py_source.html#l00005">5</a> of file <a class="el" href="mailai__bert_8py_source.html">mailai_bert.py</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="mailai__bert_8py_source.html#l00032">src.comm.mailai_bert.extract_keywords()</a>, and <a class="el" href="mailai__bert_8py_source.html#l00022">src.comm.mailai_bert.extract_n_keywords()</a>.</p>
 
 </div>
 </div>

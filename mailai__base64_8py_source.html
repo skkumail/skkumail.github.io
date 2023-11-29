@@ -65,7 +65,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">if</span> attachment.filename <span class="keywordflow">in</span> img_tag[<span class="stringliteral">&#39;alt&#39;</span>]:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    img_tag[<span class="stringliteral">&#39;src&#39;</span>] = image_data_uri</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment"># HTML을 String으로 반환</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> str(soup)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacesrc_1_1mailai_1_1settings.html#aacbd149f3f49c8b49a4e78d99b3b618a">str</a>(soup)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__base64.html#abf53c726e95a26850037307ad7b729bf">   23</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__base64.html#abf53c726e95a26850037307ad7b729bf">text_to_beautiful_soup</a>(text: str) -&gt; BeautifulSoup:</div>
@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    modified_body: str = modification_function(plane_text)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    print(modified_body)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    modified_soup: BeautifulSoup = <a class="code" href="namespacesrc_1_1comm_1_1mailai__base64.html#abf53c726e95a26850037307ad7b729bf">text_to_beautiful_soup</a>(text=modified_body)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> str(modified_soup)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacesrc_1_1mailai_1_1settings.html#aacbd149f3f49c8b49a4e78d99b3b618a">str</a>(modified_soup)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__base64.html#ab9016c17bf964b58148ec7ff3e8113ac">   49</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__base64.html#ab9016c17bf964b58148ec7ff3e8113ac">get_combined_body</a>(body1: str, body2: str, description: str) -&gt; str:</div>
@@ -113,11 +113,12 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> element <span class="keywordflow">in</span> soup2.children:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        soup1.append(element)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> str(soup1)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacesrc_1_1mailai_1_1settings.html#aacbd149f3f49c8b49a4e78d99b3b618a">str</a>(soup1)</div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__base64_html_a107791e5b6cf3a885df587f31eba45b2"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__base64.html#a107791e5b6cf3a885df587f31eba45b2">src.comm.mailai_base64.process_email_to_include_base64_images</a></div><div class="ttdeci">def process_email_to_include_base64_images(email_message)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__base64_8py_source.html#l00007">mailai_base64.py:7</a></div></div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__base64_html_a8f639d1907cae5b6a5e264015a115515"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__base64.html#a8f639d1907cae5b6a5e264015a115515">src.comm.mailai_base64.modify_base64_encoded_text_content</a></div><div class="ttdeci">str modify_base64_encoded_text_content(str text, Callable[[str], str] modification_function)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__base64_8py_source.html#l00031">mailai_base64.py:31</a></div></div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__base64_html_ab9016c17bf964b58148ec7ff3e8113ac"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__base64.html#ab9016c17bf964b58148ec7ff3e8113ac">src.comm.mailai_base64.get_combined_body</a></div><div class="ttdeci">str get_combined_body(str body1, str body2, str description)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__base64_8py_source.html#l00049">mailai_base64.py:49</a></div></div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__base64_html_abf53c726e95a26850037307ad7b729bf"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__base64.html#abf53c726e95a26850037307ad7b729bf">src.comm.mailai_base64.text_to_beautiful_soup</a></div><div class="ttdeci">BeautifulSoup text_to_beautiful_soup(str text)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__base64_8py_source.html#l00023">mailai_base64.py:23</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1mailai_1_1settings_html_aacbd149f3f49c8b49a4e78d99b3b618a"><div class="ttname"><a href="namespacesrc_1_1mailai_1_1settings.html#aacbd149f3f49c8b49a4e78d99b3b618a">src.mailai.settings.str</a></div><div class="ttdeci">str</div><div class="ttdef"><b>Definition:</b> <a href="settings_8py_source.html#l00024">settings.py:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
