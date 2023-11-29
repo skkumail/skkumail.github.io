@@ -53,8 +53,12 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a97251a58ce7034d08981de9a50440717"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#a97251a58ce7034d08981de9a50440717">translate_email</a> (str body)</td></tr>
 <tr class="separator:a97251a58ce7034d08981de9a50440717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca97dc5d4e39d50a3b70c119d9e5a0ce"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#aca97dc5d4e39d50a3b70c119d9e5a0ce">llm_translate_email</a> (str body)</td></tr>
+<tr class="separator:aca97dc5d4e39d50a3b70c119d9e5a0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15ad8f620a596c9a341f02b4ea8e8b40"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#a15ad8f620a596c9a341f02b4ea8e8b40">summarize_email</a> (str body)</td></tr>
 <tr class="separator:a15ad8f620a596c9a341f02b4ea8e8b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae069618bf649a81b8972138fbf613bb7"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#ae069618bf649a81b8972138fbf613bb7">bert_summarize_email</a> (str body)</td></tr>
+<tr class="separator:ae069618bf649a81b8972138fbf613bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f674d236f2da6a19962cbc5a8869a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#a86f674d236f2da6a19962cbc5a8869a7">extract_keyword_email</a> (body)</td></tr>
 <tr class="separator:a86f674d236f2da6a19962cbc5a8869a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f9387dd0246162aa92a87ab29ffced9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1rmailapp_1_1views.html#a1f9387dd0246162aa92a87ab29ffced9">email_detail</a> (request, email_id)</td></tr>
@@ -65,6 +69,30 @@ Functions</h2></td></tr>
 <tr class="separator:ab78adc774dc2e462795e05061e43a566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae069618bf649a81b8972138fbf613bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae069618bf649a81b8972138fbf613bb7">&#9670;&nbsp;</a></span>bert_summarize_email()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str src.rmailapp.views.bert_summarize_email </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00041">41</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+
+<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00049">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00057">src.rmailapp.views.email_detail()</a>.</p>
+
+</div>
+</div>
 <a id="a1f9387dd0246162aa92a87ab29ffced9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f9387dd0246162aa92a87ab29ffced9">&#9670;&nbsp;</a></span>email_detail()</h2>
 
@@ -91,9 +119,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00043">43</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00057">57</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
-<p class="reference">References <a class="el" href="rmailapp_2views_8py_source.html#l00034">src.rmailapp.views.extract_keyword_email()</a>, <a class="el" href="rmailapp_2views_8py_source.html#l00027">src.rmailapp.views.summarize_email()</a>, and <a class="el" href="rmailapp_2views_8py_source.html#l00020">src.rmailapp.views.translate_email()</a>.</p>
+<p class="reference">References <a class="el" href="rmailapp_2views_8py_source.html#l00041">src.rmailapp.views.bert_summarize_email()</a>, <a class="el" href="rmailapp_2views_8py_source.html#l00048">src.rmailapp.views.extract_keyword_email()</a>, <a class="el" href="rmailapp_2views_8py_source.html#l00027">src.rmailapp.views.llm_translate_email()</a>, <a class="el" href="rmailapp_2views_8py_source.html#l00034">src.rmailapp.views.summarize_email()</a>, and <a class="el" href="rmailapp_2views_8py_source.html#l00020">src.rmailapp.views.translate_email()</a>.</p>
 
 </div>
 </div>
@@ -113,11 +141,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00034">34</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00048">48</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
-<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00050">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00049">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00043">src.rmailapp.views.email_detail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00057">src.rmailapp.views.email_detail()</a>.</p>
 
 </div>
 </div>
@@ -137,9 +165,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00096">96</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00107">107</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
-<p class="reference">References <a class="el" href="mailai__imap_8py_source.html#l00019">src.comm.mailai_imap.fetch_emails()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__imap_8py_source.html#l00016">src.comm.mailai_imap.fetch_emails()</a>.</p>
+
+</div>
+</div>
+<a id="aca97dc5d4e39d50a3b70c119d9e5a0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca97dc5d4e39d50a3b70c119d9e5a0ce">&#9670;&nbsp;</a></span>llm_translate_email()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> str src.rmailapp.views.llm_translate_email </td>
+          <td>(</td>
+          <td class="paramtype">str&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00027">27</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+
+<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00049">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00057">src.rmailapp.views.email_detail()</a>.</p>
 
 </div>
 </div>
@@ -159,7 +211,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00069">69</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00085">85</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
 </div>
 </div>
@@ -179,11 +231,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00027">27</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00034">34</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
-<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00050">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00049">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00043">src.rmailapp.views.email_detail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00057">src.rmailapp.views.email_detail()</a>.</p>
 
 </div>
 </div>
@@ -205,9 +257,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="rmailapp_2views_8py_source.html#l00020">20</a> of file <a class="el" href="rmailapp_2views_8py_source.html">views.py</a>.</p>
 
-<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00050">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
+<p class="reference">References <a class="el" href="mailai__base64_8py_source.html#l00049">src.comm.mailai_base64.get_combined_body()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00031">src.comm.mailai_base64.modify_base64_encoded_text_content()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00043">src.rmailapp.views.email_detail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00057">src.rmailapp.views.email_detail()</a>.</p>
 
 </div>
 </div>

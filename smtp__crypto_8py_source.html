@@ -54,15 +54,13 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1smtp__crypto.html#a02518761281533dd4bf20fce1fe7b438">    8</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1smtp__crypto.html#a02518761281533dd4bf20fce1fe7b438">encrypt_smtp_password</a>(password):</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Encrypt the SMTP password.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> fernet.encrypt(password.encode()).decode()</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> fernet.encrypt(password.encode()).decode()</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">   13</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">decrypt_smtp_password</a>(encrypted_password):</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;Decrypt the SMTP password.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> fernet.decrypt(encrypted_password.encode()).decode()</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">   12</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">decrypt_smtp_password</a>(encrypted_password):</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> fernet.decrypt(encrypted_password.encode()).decode()</div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1smtp__crypto_html_a02518761281533dd4bf20fce1fe7b438"><div class="ttname"><a href="namespacesrc_1_1comm_1_1smtp__crypto.html#a02518761281533dd4bf20fce1fe7b438">src.comm.smtp_crypto.encrypt_smtp_password</a></div><div class="ttdeci">def encrypt_smtp_password(password)</div><div class="ttdef"><b>Definition:</b> <a href="smtp__crypto_8py_source.html#l00008">smtp_crypto.py:8</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1smtp__crypto_html_aef0430acd4eb6962007954056632cb1a"><div class="ttname"><a href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">src.comm.smtp_crypto.decrypt_smtp_password</a></div><div class="ttdeci">def decrypt_smtp_password(encrypted_password)</div><div class="ttdef"><b>Definition:</b> <a href="smtp__crypto_8py_source.html#l00013">smtp_crypto.py:13</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1smtp__crypto_html_aef0430acd4eb6962007954056632cb1a"><div class="ttname"><a href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">src.comm.smtp_crypto.decrypt_smtp_password</a></div><div class="ttdeci">def decrypt_smtp_password(encrypted_password)</div><div class="ttdef"><b>Definition:</b> <a href="smtp__crypto_8py_source.html#l00012">smtp_crypto.py:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

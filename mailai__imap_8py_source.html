@@ -49,33 +49,33 @@ $(function() {
 <a href="mailai__imap_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__imap.html">    1</a></span>&#160;<span class="keyword">import</span> logging</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> imap_tools <span class="keyword">import</span> MailBox, AND, MailboxLoginError</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">from</span> authapp.models <span class="keyword">import</span> UserProfile</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">from</span> comm.mailai_base64 <span class="keyword">import</span> process_email_to_include_base64_images</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> comm.smtp_crypto <span class="keyword">import</span> decrypt_smtp_password</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> rmailapp.models <span class="keyword">import</span> Email</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> django.utils <span class="keyword">import</span> timezone</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> django.utils.timezone <span class="keyword">import</span> is_aware, make_aware, get_default_timezone</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> django.utils.timezone <span class="keyword">import</span> is_aware, make_aware, get_default_timezone</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> imap_tools <span class="keyword">import</span> MailBox, AND, MailboxLoginError</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">from</span> authapp.models <span class="keyword">import</span> UserProfile</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">from</span> comm.mailai_base64 <span class="keyword">import</span> process_email_to_include_base64_images</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">from</span> comm.smtp_crypto <span class="keyword">import</span> decrypt_smtp_password</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">from</span> rmailapp.models <span class="keyword">import</span> Email</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">from</span> comm.mailai_compatibility <span class="keyword">import</span> get_imap_server, email_to_server_type, ServerTypeException</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__imap.html#a9a493e4d77e35c5f3e706ffdb1277bb6">   13</a></span>&#160;logger = logging.getLogger(__name__)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__imap.html#a9a493e4d77e35c5f3e706ffdb1277bb6">   16</a></span>&#160;logger = logging.getLogger(__name__)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">   19</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">fetch_emails</a>(user_id: int, max_emails: int = 500) -&gt; bool:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        user = User.objects.get(id=user_id)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        user_profile = UserProfile.objects.get(user=user)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        imap_password = <a class="code" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">decrypt_smtp_password</a>(user_profile.encrypted_smtp_password)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        email_user_name = user.email</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        logger.error(f<span class="stringliteral">&quot;Failed to retrieve user details: {e}&quot;</span>)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">with</span> MailBox(<span class="stringliteral">&#39;imap.gmail.com&#39;</span>).login(email_user_name, imap_password, initial_folder=<span class="stringliteral">&#39;INBOX&#39;</span>) <span class="keyword">as</span> mailbox:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">   16</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">fetch_emails</a>(user_id: int, max_emails: int = 500) -&gt; bool:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        user = User.objects.get(id=user_id)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        user_profile = UserProfile.objects.get(user=user)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        imap_password = <a class="code" href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">decrypt_smtp_password</a>(user_profile.encrypted_smtp_password)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        email_user_name = user.email</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        logger.error(f<span class="stringliteral">&quot;Failed to retrieve user details: {e}&quot;</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        server_type = <a class="code" href="namespacesrc_1_1comm_1_1mailai__compatibility.html#a7f0608c352d78e78af8d4f4b853a854c">email_to_server_type</a>(user.email)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        imap_server = <a class="code" href="namespacesrc_1_1comm_1_1mailai__compatibility.html#a783f0e1b13bf05aa680b085db5a95303">get_imap_server</a>(server_type)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        print(f<span class="stringliteral">&quot;IMAP Server: {imap_server}&quot;</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">with</span> MailBox(imap_server).login(email_user_name, imap_password, initial_folder=<span class="stringliteral">&#39;INBOX&#39;</span>) <span class="keyword">as</span> mailbox:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">for</span> msg <span class="keywordflow">in</span> mailbox.fetch(AND(all=<span class="keyword">True</span>), limit=max_emails, reverse=<span class="keyword">True</span>):</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                processed_body = <a class="code" href="namespacesrc_1_1comm_1_1mailai__base64.html#a107791e5b6cf3a885df587f31eba45b2">process_email_to_include_base64_images</a>(msg)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> <span class="keywordflow">not</span> is_aware(msg.date):</div>
@@ -94,16 +94,20 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="stringliteral">&#39;username&#39;</span>: user,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                )</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">True</span>  <span class="comment"># Connection is automatically closed when exiting the with block</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">True</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">except</span> MailboxLoginError <span class="keyword">as</span> e:</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        logger.error(f<span class="stringliteral">&quot;Failed to log in to the mailbox: {e}&quot;</span>)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        logger.error(f<span class="stringliteral">&quot;An unexpected error occurred: {e}&quot;</span>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">except</span> ServerTypeException <span class="keyword">as</span> e:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        print(f<span class="stringliteral">&quot;Error: {e}&quot;</span>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">except</span> Exception <span class="keyword">as</span> e:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        logger.error(f<span class="stringliteral">&quot;An unexpected error occurred: {e}&quot;</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
 <div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__base64_html_a107791e5b6cf3a885df587f31eba45b2"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__base64.html#a107791e5b6cf3a885df587f31eba45b2">src.comm.mailai_base64.process_email_to_include_base64_images</a></div><div class="ttdeci">def process_email_to_include_base64_images(email_message)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__base64_8py_source.html#l00007">mailai_base64.py:7</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__imap_html_a3a0364de9e462a732132b72fa01431e2"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">src.comm.mailai_imap.fetch_emails</a></div><div class="ttdeci">bool fetch_emails(int user_id, int max_emails=500)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__imap_8py_source.html#l00019">mailai_imap.py:19</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1smtp__crypto_html_aef0430acd4eb6962007954056632cb1a"><div class="ttname"><a href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">src.comm.smtp_crypto.decrypt_smtp_password</a></div><div class="ttdeci">def decrypt_smtp_password(encrypted_password)</div><div class="ttdef"><b>Definition:</b> <a href="smtp__crypto_8py_source.html#l00013">smtp_crypto.py:13</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__compatibility_html_a783f0e1b13bf05aa680b085db5a95303"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__compatibility.html#a783f0e1b13bf05aa680b085db5a95303">src.comm.mailai_compatibility.get_imap_server</a></div><div class="ttdeci">str get_imap_server(str server_type)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__compatibility_8py_source.html#l00041">mailai_compatibility.py:41</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__compatibility_html_a7f0608c352d78e78af8d4f4b853a854c"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__compatibility.html#a7f0608c352d78e78af8d4f4b853a854c">src.comm.mailai_compatibility.email_to_server_type</a></div><div class="ttdeci">str email_to_server_type(str email)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__compatibility_8py_source.html#l00024">mailai_compatibility.py:24</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__imap_html_a3a0364de9e462a732132b72fa01431e2"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">src.comm.mailai_imap.fetch_emails</a></div><div class="ttdeci">bool fetch_emails(int user_id, int max_emails=500)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__imap_8py_source.html#l00016">mailai_imap.py:16</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1smtp__crypto_html_aef0430acd4eb6962007954056632cb1a"><div class="ttname"><a href="namespacesrc_1_1comm_1_1smtp__crypto.html#aef0430acd4eb6962007954056632cb1a">src.comm.smtp_crypto.decrypt_smtp_password</a></div><div class="ttdeci">def decrypt_smtp_password(encrypted_password)</div><div class="ttdef"><b>Definition:</b> <a href="smtp__crypto_8py_source.html#l00012">smtp_crypto.py:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
