@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MailAI: src/comm/mailai_bert.py Source File</title>
+<title>Mail AI: src/comm/mailai_bert.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MailAI
+   <div id="projectname">Mail AI
    </div>
   </td>
  </tr>
@@ -46,104 +46,95 @@ $(function() {
 <div class="title">mailai_bert.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="mailai__bert_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html">    1</a></span>&#160;<span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> keybert <span class="keyword">import</span> KeyBERT</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">from</span> transformers <span class="keyword">import</span> pipeline, Pipeline, AutoTokenizer</div>
+<a href="mailai__bert_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html">    1</a></span>&#160;<span class="keyword">from</span> keybert <span class="keyword">import</span> KeyBERT</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">from</span> transformers <span class="keyword">import</span> pipeline, Pipeline, BertTokenizer</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">    6</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">truncate_for_bert</a>(text, max_length=512):</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(<span class="stringliteral">&#39;bert-base-uncased&#39;</span>)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    inputs = tokenizer.encode_plus(</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        text,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        add_special_tokens=<span class="keyword">True</span>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        max_length=max_length,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        truncation=<span class="keyword">True</span>,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        return_tensors=<span class="stringliteral">&#39;pt&#39;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    )</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment"># Convert the tokens back to a string</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    truncated_text = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens(inputs[<span class="stringliteral">&#39;input_ids&#39;</span>][0]))</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> truncated_text</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a6570e73f9ce94c6cf3d1e9d8065f9f15">    5</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a6570e73f9ce94c6cf3d1e9d8065f9f15">truncate_for_bert</a>(text, max_length=1024):</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    tokenizer = BertTokenizer.from_pretrained(<span class="stringliteral">&#39;bert-base-uncased&#39;</span>)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    tokens = tokenizer.encode(text, add_special_tokens=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    truncated_tokens = tokens[:max_length]</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    truncated_text = tokenizer.decode(truncated_tokens)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> truncated_text</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">   14</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">extract_n_keywords</a>(text: str, num_keywords: int) -&gt; list:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    text = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a6570e73f9ce94c6cf3d1e9d8065f9f15">truncate_for_bert</a>(text=text)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    kw_model: KeyBERT = KeyBERT()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    result = kw_model.extract_keywords(docs=text, top_n=num_keywords)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    print(result)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> keyword <span class="keywordflow">in</span> result:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        print(keyword)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> result</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">   23</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">extract_n_keywords</a>(text: str, num_keywords: int) -&gt; list:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    text = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">truncate_for_bert</a>(text=text)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    kw_model: KeyBERT = KeyBERT()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    result = kw_model.extract_keywords(docs=text, top_n=num_keywords)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    print(result)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> keyword <span class="keywordflow">in</span> result:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        print(keyword)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> result</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">   33</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">extract_keywords</a>(text: str) -&gt; str:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    text = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">truncate_for_bert</a>(text=text)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    num_keywords: int = 5</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    keywords: list = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">extract_n_keywords</a>(text=text, num_keywords=num_keywords)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    html_content = <span class="stringliteral">&quot;&lt;!DOCTYPE html&gt;&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;html lang=&#39;en&#39;&gt;&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;head&gt;&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;meta charset=&#39;UTF-8&#39;&gt;&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1.0&#39;&gt;&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;title&gt;Keyword Analysis&lt;/title&gt;&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    html_content += (<span class="stringliteral">&quot;&lt;link rel=&#39;stylesheet&#39; href=&#39;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                     <span class="stringliteral">&quot;.min.css&#39;&gt;&quot;</span>)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/head&gt;&quot;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;body&gt;&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;div class=&#39;container mt-4&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">   24</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">extract_keywords</a>(text: str) -&gt; str:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    text = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a6570e73f9ce94c6cf3d1e9d8065f9f15">truncate_for_bert</a>(text=text)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    num_keywords: int = 5</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    keywords: list = <a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">extract_n_keywords</a>(text=text, num_keywords=num_keywords)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    html_content = <span class="stringliteral">&quot;&lt;!DOCTYPE html&gt;&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;html lang=&#39;en&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;head&gt;&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;meta charset=&#39;UTF-8&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1.0&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;title&gt;Keyword Analysis&lt;/title&gt;&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    html_content += (<span class="stringliteral">&quot;&lt;link rel=&#39;stylesheet&#39; href=&#39;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                     <span class="stringliteral">&quot;.min.css&#39;&gt;&quot;</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/head&gt;&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;body&gt;&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;div class=&#39;container mt-4&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    html_table = <span class="stringliteral">&quot;&lt;table class=&#39;table table-bordered table-hover&#39;&gt;&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;thead class=&#39;thead-dark&#39;&gt;&lt;tr&gt;&lt;th&gt;Keyword&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;tbody&gt;&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> keyword, score <span class="keywordflow">in</span> keywords:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        html_table += f<span class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;{keyword}&lt;/td&gt;&lt;td&gt;{score:.2f}&lt;/td&gt;&lt;/tr&gt;&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;/tbody&gt;&lt;/table&gt;&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    html_table = <span class="stringliteral">&quot;&lt;table class=&#39;table table-bordered table-hover&#39;&gt;&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;thead class=&#39;thead-dark&#39;&gt;&lt;tr&gt;&lt;th&gt;Keyword&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;tbody&gt;&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> keyword, score <span class="keywordflow">in</span> keywords:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        html_table += f<span class="stringliteral">&quot;&lt;tr&gt;&lt;td&gt;{keyword}&lt;/td&gt;&lt;td&gt;{score:.2f}&lt;/td&gt;&lt;/tr&gt;&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    html_content += html_table</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://code.jquery.com/jquery-3.3.1.slim.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    html_table += <span class="stringliteral">&quot;&lt;/tbody&gt;&lt;/table&gt;&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    html_content += html_table</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/div&gt;&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/body&gt;&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/html&gt;&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> html_content</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://code.jquery.com/jquery-3.3.1.slim.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;script src=&#39;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js&#39;&gt;&lt;/script&gt;&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/body&gt;&quot;</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    html_content += <span class="stringliteral">&quot;&lt;/html&gt;&quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> html_content</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">   73</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">summarize</a>(text: str):</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    summarizer: Pipeline = pipeline(<span class="stringliteral">&quot;summarization&quot;</span>)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    summary = summarizer(text, max_length=140, min_length=30, do_sample=<span class="keyword">False</span>)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    summary_text = summary[0][<span class="stringliteral">&#39;summary_text&#39;</span>]</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    html_output = f<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">    &lt;div class=&quot;container mt-4&quot;&gt;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">        &lt;div class=&quot;row&quot;&gt;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">            &lt;div class=&quot;col-md-12&quot;&gt;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">                &lt;div class=&quot;card&quot;&gt;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">                    &lt;div class=&quot;card-header&quot;&gt;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">                        Summary</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">                    &lt;/div&gt;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">                    &lt;div class=&quot;card-body&quot;&gt;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">                        &lt;p class=&quot;card-text&quot;&gt;{summary_text}&lt;/p&gt;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">                    &lt;/div&gt;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">                &lt;/div&gt;</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">            &lt;/div&gt;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral">    &lt;/div&gt;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> html_output</div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a68fd04d38b95ab3ef7cdc4a1b6fec564"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a68fd04d38b95ab3ef7cdc4a1b6fec564">src.comm.mailai_bert.truncate_for_bert</a></div><div class="ttdeci">def truncate_for_bert(text, max_length=512)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00006">mailai_bert.py:6</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a9789254029e96abba986719e447fe88c"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">src.comm.mailai_bert.summarize</a></div><div class="ttdeci">def summarize(str text)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00073">mailai_bert.py:73</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a9a740aadafcd304f24d9a83a110f4fac"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">src.comm.mailai_bert.extract_n_keywords</a></div><div class="ttdeci">list extract_n_keywords(str text, int num_keywords)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00023">mailai_bert.py:23</a></div></div>
-<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_abf26374bf613f91c5102884925bd2285"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">src.comm.mailai_bert.extract_keywords</a></div><div class="ttdeci">str extract_keywords(str text)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00033">mailai_bert.py:33</a></div></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">   64</a></span>&#160;<span class="keyword">def </span><a class="code" href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">summarize</a>(text: str):</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    summarizer: Pipeline = pipeline(<span class="stringliteral">&quot;summarization&quot;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    summary = summarizer(text, max_length=140, min_length=30, do_sample=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    summary_text = summary[0][<span class="stringliteral">&#39;summary_text&#39;</span>]</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    html_output = f<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">    &lt;div class=&quot;container mt-4&quot;&gt;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral">        &lt;div class=&quot;row&quot;&gt;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">            &lt;div class=&quot;col-md-12&quot;&gt;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">                &lt;div class=&quot;card&quot;&gt;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="stringliteral">                    &lt;div class=&quot;card-header&quot;&gt;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral">                        Summary</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">                    &lt;/div&gt;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral">                    &lt;div class=&quot;card-body&quot;&gt;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">                        &lt;p class=&quot;card-text&quot;&gt;{summary_text}&lt;/p&gt;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">                    &lt;/div&gt;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">                &lt;/div&gt;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">            &lt;/div&gt;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">        &lt;/div&gt;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">    &lt;/div&gt;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> html_output</div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a6570e73f9ce94c6cf3d1e9d8065f9f15"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a6570e73f9ce94c6cf3d1e9d8065f9f15">src.comm.mailai_bert.truncate_for_bert</a></div><div class="ttdeci">def truncate_for_bert(text, max_length=1024)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00005">mailai_bert.py:5</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a9789254029e96abba986719e447fe88c"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a9789254029e96abba986719e447fe88c">src.comm.mailai_bert.summarize</a></div><div class="ttdeci">def summarize(str text)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00064">mailai_bert.py:64</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_a9a740aadafcd304f24d9a83a110f4fac"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#a9a740aadafcd304f24d9a83a110f4fac">src.comm.mailai_bert.extract_n_keywords</a></div><div class="ttdeci">list extract_n_keywords(str text, int num_keywords)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00014">mailai_bert.py:14</a></div></div>
+<div class="ttc" id="anamespacesrc_1_1comm_1_1mailai__bert_html_abf26374bf613f91c5102884925bd2285"><div class="ttname"><a href="namespacesrc_1_1comm_1_1mailai__bert.html#abf26374bf613f91c5102884925bd2285">src.comm.mailai_bert.extract_keywords</a></div><div class="ttdeci">str extract_keywords(str text)</div><div class="ttdef"><b>Definition:</b> <a href="mailai__bert_8py_source.html#l00024">mailai_bert.py:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

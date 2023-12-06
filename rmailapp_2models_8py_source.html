@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MailAI: src/rmailapp/models.py Source File</title>
+<title>Mail AI: src/rmailapp/models.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MailAI
+   <div id="projectname">Mail AI
    </div>
   </td>
  </tr>
@@ -58,17 +58,16 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#ac637d6e329a83c4c3a2790eb884d31f4">   10</a></span>&#160;    date = models.DateTimeField()</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#aafc8edd658f20d6378882781accedba8">   11</a></span>&#160;    body = models.TextField()</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#ade52ea858da4b444827dd0e55f78b274">   12</a></span>&#160;    objects = models.Manager()</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#ac43311ae70ad19c52cbaceb94bdff514">   14</a></span>&#160;    username = models.ForeignKey(User, on_delete=models.CASCADE, to_field=<span class="stringliteral">&#39;username&#39;</span>, related_name=<span class="stringliteral">&#39;user_emails&#39;</span>)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">Meta</a>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html#a237accda43d37d9ec81b1649b9c60f5d">   17</a></span>&#160;        unique_together = (<span class="stringliteral">&#39;uid&#39;</span>, <span class="stringliteral">&#39;username&#39;</span>)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">   19</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">__str__</a>(self):</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> f<span class="stringliteral">&quot;From: {self.sender}, To: {self.recipient}, Subject: &#39;{self.subject}&#39;, Date: {self.date}&quot;</span></div>
-<div class="ttc" id="aclasssrc_1_1rmailapp_1_1models_1_1_email_1_1_meta_html"><div class="ttname"><a href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">src.rmailapp.models.Email.Meta</a></div><div class="ttdef"><b>Definition:</b> <a href="rmailapp_2models_8py_source.html#l00016">models.py:16</a></div></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a34e6e95cb9cb8ea37e00e044bf776f07">   13</a></span>&#160;    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name=<span class="stringliteral">&#39;user_id&#39;</span>)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">Meta</a>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html#a237accda43d37d9ec81b1649b9c60f5d">   16</a></span>&#160;        unique_together = (<span class="stringliteral">&#39;uid&#39;</span>, <span class="stringliteral">&#39;user&#39;</span>)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">   18</a></span>&#160;    <span class="keyword">def </span><a class="code" href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">__str__</a>(self):</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> f<span class="stringliteral">&quot;From: {self.sender}, To: {self.recipient}, Subject: &#39;{self.subject}&#39;, Date: {self.date}&quot;</span></div>
+<div class="ttc" id="aclasssrc_1_1rmailapp_1_1models_1_1_email_1_1_meta_html"><div class="ttname"><a href="classsrc_1_1rmailapp_1_1models_1_1_email_1_1_meta.html">src.rmailapp.models.Email.Meta</a></div><div class="ttdef"><b>Definition:</b> <a href="rmailapp_2models_8py_source.html#l00015">models.py:15</a></div></div>
 <div class="ttc" id="aclasssrc_1_1rmailapp_1_1models_1_1_email_html"><div class="ttname"><a href="classsrc_1_1rmailapp_1_1models_1_1_email.html">src.rmailapp.models.Email</a></div><div class="ttdef"><b>Definition:</b> <a href="rmailapp_2models_8py_source.html#l00005">models.py:5</a></div></div>
-<div class="ttc" id="aclasssrc_1_1rmailapp_1_1models_1_1_email_html_a33f4f0580dc631f4ba68a39aa23a6199"><div class="ttname"><a href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">src.rmailapp.models.Email.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="rmailapp_2models_8py_source.html#l00019">models.py:19</a></div></div>
+<div class="ttc" id="aclasssrc_1_1rmailapp_1_1models_1_1_email_html_a33f4f0580dc631f4ba68a39aa23a6199"><div class="ttname"><a href="classsrc_1_1rmailapp_1_1models_1_1_email.html#a33f4f0580dc631f4ba68a39aa23a6199">src.rmailapp.models.Email.__str__</a></div><div class="ttdeci">def __str__(self)</div><div class="ttdef"><b>Definition:</b> <a href="rmailapp_2models_8py_source.html#l00018">models.py:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

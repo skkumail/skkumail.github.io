@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MailAI: src.comm.mailai_imap Namespace Reference</title>
+<title>Mail AI: src.comm.mailai_imap Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">MailAI
+   <div id="projectname">Mail AI
    </div>
   </td>
  </tr>
@@ -52,8 +52,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3a0364de9e462a732132b72fa01431e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1comm_1_1mailai__imap.html#a3a0364de9e462a732132b72fa01431e2">fetch_emails</a> (int user_id, int max_emails=500)</td></tr>
-<tr class="separator:a3a0364de9e462a732132b72fa01431e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e47f5e09e9715cbeb70e1264382ba7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesrc_1_1comm_1_1mailai__imap.html#a9e47f5e09e9715cbeb70e1264382ba7e">fetch_emails</a> (int user_id, int max_emails=500, bool mark_seen=False)</td></tr>
+<tr class="separator:a9e47f5e09e9715cbeb70e1264382ba7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -63,8 +63,8 @@ Variables</h2></td></tr>
 <tr class="separator:a9a493e4d77e35c5f3e706ffdb1277bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3a0364de9e462a732132b72fa01431e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a0364de9e462a732132b72fa01431e2">&#9670;&nbsp;</a></span>fetch_emails()</h2>
+<a id="a9e47f5e09e9715cbeb70e1264382ba7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e47f5e09e9715cbeb70e1264382ba7e">&#9670;&nbsp;</a></span>fetch_emails()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -79,7 +79,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int &#160;</td>
-          <td class="paramname"><em>max_emails</em> = <code>500</code>&#160;</td>
+          <td class="paramname"><em>max_emails</em> = <code>500</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &#160;</td>
+          <td class="paramname"><em>mark_seen</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -89,11 +95,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00017">17</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00018">18</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
 
-<p class="reference">References <a class="el" href="smtp__crypto_8py_source.html#l00012">src.comm.smtp_crypto.decrypt_smtp_password()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00007">src.comm.mailai_base64.process_email_to_include_base64_images()</a>.</p>
+<p class="reference">References <a class="el" href="smtp__crypto_8py_source.html#l00012">src.comm.smtp_crypto.decrypt_smtp_password()</a>, and <a class="el" href="mailai__base64_8py_source.html#l00008">src.comm.mailai_base64.process_email_to_include_base64_images()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00107">src.rmailapp.views.handle_emails()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="rmailapp_2views_8py_source.html#l00104">src.rmailapp.views.handle_emails()</a>.</p>
 
 </div>
 </div>
@@ -110,7 +116,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00014">14</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00015">15</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
 
 </div>
 </div>
@@ -126,7 +132,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00012">12</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mailai__imap_8py_source.html#l00013">13</a> of file <a class="el" href="mailai__imap_8py_source.html">mailai_imap.py</a>.</p>
 
 </div>
 </div>
