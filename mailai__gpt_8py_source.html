@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mail AI: src/comm/mailai_gpt.py Source File</title>
+<title>MailAI: src/comm/mailai_gpt.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Mail AI
+   <div id="projectname">MailAI
    </div>
   </td>
  </tr>
@@ -51,8 +51,8 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">from</span> authapp.models <span class="keyword">import</span> User</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__gpt.html#a656a3711c88fff4156f279c3fc64c221">    6</a></span>&#160;openai_api_key = settings.OPENAI_API_KEY</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__gpt.html#a175ae6d67404e2179cd2a2c3ea5e8587">    7</a></span>&#160;openai_model = settings.OPENAI_MODEL</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__gpt.html#a656a3711c88fff4156f279c3fc64c221">    6</a></span>&#160;openai_api_key = settings.GPT_OPENAI_APIKEY</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__gpt.html#a175ae6d67404e2179cd2a2c3ea5e8587">    7</a></span>&#160;openai_model = settings.GPT_MODEL</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacesrc_1_1comm_1_1mailai__gpt.html#a31ed865ca152b032527cf12012ce07be">    8</a></span>&#160;headers = {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="stringliteral">&quot;Content-Type&quot;</span>: <span class="stringliteral">&quot;application/json&quot;</span>,</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="stringliteral">&quot;Authorization&quot;</span>: f<span class="stringliteral">&quot;Bearer {openai_api_key}&quot;</span></div>
